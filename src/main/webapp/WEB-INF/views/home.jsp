@@ -13,7 +13,8 @@
 				<!-- general form elements -->
 				<div class="box">
 					<div class="box-header with-border">
-						<h3 class="box-title">HOME PAGE</h3>
+						<a href="/login">로그인</a>
+						<a href="/community/listPage">목록</a>
 					</div>
 				</div>
 			</div>

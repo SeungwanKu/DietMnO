@@ -98,6 +98,8 @@ public class CommunityController {
 		rttr.addFlashAttribute("result","saveOK");
 		rttr.addAttribute("page", cri.getPage());
 		rttr.addAttribute("perPageNum", cri.getPerPageNum());
+		rttr.addAttribute("searchType", cri.getSearchType());
+		rttr.addAttribute("keyword", cri.getKeyword());
 		rttr.addAttribute("bno", vo.getBno());
 		return "redirect:/community/view";
 	}
@@ -112,6 +114,8 @@ public class CommunityController {
 		rttr.addFlashAttribute("result","removeOK");
 		rttr.addAttribute("page", cri.getPage());
 		rttr.addAttribute("perPageNum", cri.getPerPageNum());
+		rttr.addAttribute("searchType", cri.getSearchType());
+		rttr.addAttribute("keyword", cri.getKeyword());
 		return "redirect:/community/listPage";
 	}
 	//게시물 목록+페이징

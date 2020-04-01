@@ -4,7 +4,7 @@
 	pageEncoding="UTF-8"%>
 
 <%@include file="../include/header.jsp"%>
-
+<div id="saveOK" class="alert alert-warning hidden" role="alert">글이 수정되었습니다.</div>
 <div class="box-body">
 	<span><b>글번호:</b> ${view.bno}</span>	
 	<div class="form-group">

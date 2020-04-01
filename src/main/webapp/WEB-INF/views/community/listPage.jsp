@@ -11,6 +11,22 @@
 
 	
 <div class="row">
+	<!-- 검색 select 박스 추가 -->
+	<div class="col-md-11">
+		<div class="form-inline">
+			<select id="searchTypeSel" name="searchType">
+		  		<option value="">검색조건</option>
+		  		<option value="t">제목</option> 
+		  		<option value="c">내용</option>
+		  		<option value="w">작성자</option>
+		  		<option value="tc">제목+내용</option>
+		  		<option value="all">전체조건</option>
+			</select>
+			<input class="form-control" type="text" id="keyword" name="keyword" 
+				value="${pageMaker.cri.keyword}" placeholder="검색어를 입력하세요"/>
+			<button id="searchBtn" class="btn btn-primary">Search</button>
+		</div>
+	</div>			
 	<div class="col-md-11"></div>	
 	<div class="col-md-1 text-right">
 		<!-- perPageNum의 값을 정하는 select 박스 -->
@@ -46,6 +62,7 @@
 <!-- 등록, dummy 버튼 -->
 <div>
 	<a href="/community/write"><button class="btn btn-primary">새글등록</button></a>
+	<a href="/community/listPage" class="btn btn-warning">처음목록</a>
 </div>
 
 <!-- 페이지 번호 -->	
@@ -85,6 +102,8 @@
 	$(function(){
 		//perPageNum select 박스 설정
 		setPerPageNumSelect();
+		//searchType select 박스 설정
+		setSearchTypeSelect();
 		
 		//등록, 삭제 후 문구 처리
 		var result = '${result}';
@@ -126,6 +145,33 @@
 		$perPageSel.on('change',function(){
 			//pageMarker.makeQuery 사용 못하는 이유: makeQuery는 page만을 매개변수로 받기에 변경된 perPageNum을 반영못함
 			window.location.href = "listPage?page="+thisPage+"&perPageNum="+$perPageSel.val();
+		})
+	}
+	function setSearchTypeSelect(){
+		var $searchTypeSel = $('#searchTypeSel');
+		var $keyword = $('#keyword');
+		
+		$searchTypeSel.val('${pageMaker.cri.searchType}').prop("selected",true);
+		//검색 버튼이 눌리면
+		$('#searchBtn').on('click',function(){
+			var searchTypeVal = $searchTypeSel.val();
+			var keywordVal = $keyword.val();
+			//검색 조건 입력 안했으면 경고창 
+			if(!searchTypeVal){
+				alert("검색 조건을 선택하세요!");
+				$searchTypeSel.focus();
+				return;
+			//검색어 입력 안했으면 검색창
+			}else if(!keywordVal){
+				alert("검색어를 입력하세요!");
+				$('#keyword').focus();
+				return;
+			}
+			var url = "listPage?page=1"
+				+ "&perPageNum=" + "${pageMaker.cri.perPageNum}"
+				+ "&searchType=" + searchTypeVal
+				+ "&keyword=" + encodeURIComponent(keywordVal);
+			window.location.href = url;
 		})
 	}
 </script>

@@ -3,7 +3,28 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.spring.mno.mappers.community">
-
+<sql id="searchCondition">
+		<if test="searchType != null">
+			<if test="searchType == 't'.toString()">
+				and title like concat('%', #{keyword}, '%')
+			</if>
+			<if test="searchType == 'c'.toString()">
+				and content like concat('%', #{keyword}, '%')
+			</if>
+			<if test="searchType == 'w'.toString()">
+				and writer like concat('%', #{keyword}, '%')
+			</if>
+			<if test="searchType == 'tc'.toString()">
+				and (title like concat('%', #{keyword}, '%')
+					or content like concat('%', #{keyword}, '%'))
+			</if>
+			<if test="searchType == 'all'.toString()">
+				and (title like concat('%', #{keyword}, '%')
+					or content like concat('%', #{keyword}, '%')
+					or writer like concat('%', #{keyword}, '%'))
+			</if>
+		</if>
+	</sql>
 	<!-- 게시물 목록 -->
 	<select id="list"
 		resultType="com.spring.mno.community.domain.CommunityVO">
@@ -56,6 +77,7 @@
 		select count(bno)
 		from tbl_board
 		where bno > 0
+		<include refid="searchCondition"></include>
 	</select>
 	
 
@@ -66,6 +88,7 @@
 		*
 		from tbl_board
 		where bno > 0
+		<include refid="searchCondition"></include>
 		order by bno desc, regDate desc
 		limit #{pageStart}, #{perPageNum}
 	</select>
