@@ -1,4 +1,4 @@
-package com.spring.mno.community.domain;
+package com.spring.mno.community.controller;
 
 import java.io.File;
 import java.io.FileInputStream;
