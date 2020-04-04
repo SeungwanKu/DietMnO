@@ -22,15 +22,6 @@ public class UserLoginController {
 		return "login";
 	}
 
-	/* 로그인 처리 : HttpServletRequest를 사용
-	@RequestMapping(value="/login", method = RequestMethod.POST)
-	public String login(UsersDTO usersDTO, HttpServletRequest request) {
-		HttpSession session = request.getSession();
-		session.setAttribute("usersDTO", usersService.select(usersDTO.getId()));
-		return "boardList";
-	}
-	*/
-
 	// 로그인 처리 : HttpSession을 사용
 	@RequestMapping(value="/login", method = RequestMethod.POST)
 	public String login(UserVO userVO, HttpSession session, RedirectAttributes rttr, Model model) {

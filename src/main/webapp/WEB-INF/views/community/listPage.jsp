@@ -53,7 +53,7 @@
 			<!-- PageMaker의 makeQuery 메소드 이용해서 URI 생성 -->
 			<td><a href="/community/view${pageMaker.makeQuery(pageMaker.cri.page)}&bno=${list.bno}">${list.title}</a></td>
 			<td>${ list.writer}</td>
-			<td><fmt:formatDate pattern="YYYY-MM-dd HH:mm:ss" value="${ list.regDate}"/></td>
+			<td><fmt:formatDate pattern="YYYY-MM-dd " value="${ list.regDate}"/></td>
 			<td>${ list.viewCnt}</td>
 		</tr>
 	</c:forEach>
