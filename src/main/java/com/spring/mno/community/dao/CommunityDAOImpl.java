@@ -8,8 +8,8 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
+import com.spring.mno.common.Criteria;
 import com.spring.mno.community.domain.CommunityVO;
-import com.spring.mno.community.domain.Criteria;
 
 @Repository
 public class CommunityDAOImpl implements CommunityDAO {

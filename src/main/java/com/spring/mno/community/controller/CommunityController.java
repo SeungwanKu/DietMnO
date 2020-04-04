@@ -16,9 +16,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.spring.mno.common.Criteria;
+import com.spring.mno.common.PageMaker;
 import com.spring.mno.community.domain.CommunityVO;
-import com.spring.mno.community.domain.Criteria;
-import com.spring.mno.community.domain.PageMaker;
 import com.spring.mno.community.service.CommunityService;
 
 @Controller

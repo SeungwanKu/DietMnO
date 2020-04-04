@@ -12,8 +12,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.spring.mno.common.Criteria;
 import com.spring.mno.community.domain.CommunityVO;
-import com.spring.mno.community.domain.Criteria;
 import com.spring.mno.community.service.CommunityService;
 
 /**

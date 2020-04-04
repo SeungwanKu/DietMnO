@@ -6,9 +6,9 @@ import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
 
+import com.spring.mno.common.Criteria;
 import com.spring.mno.community.dao.CommunityDAO;
 import com.spring.mno.community.domain.CommunityVO;
-import com.spring.mno.community.domain.Criteria;
 
 @Service
 public class CommunityServiceImpl implements CommunityService {

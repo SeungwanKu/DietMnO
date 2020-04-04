@@ -15,8 +15,8 @@
 				<div class="box">
 					<div class="box-header with-border">
 						<a href="/login">로그인</a>
-						<a href="/community/listPage">목록</a>
-					
+						<a href="/community/listPage">커뮤니티</a>
+						<a href="/diet/list">식단등록</a>
 
 					</div>
 				</div>

@@ -2,8 +2,8 @@ package com.spring.mno.community.dao;
 
 import java.util.List;
 
+import com.spring.mno.common.Criteria;
 import com.spring.mno.community.domain.CommunityVO;
-import com.spring.mno.community.domain.Criteria;
 
 public interface CommunityDAO {
 	// 게시판 목록

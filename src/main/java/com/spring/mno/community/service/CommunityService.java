@@ -2,8 +2,8 @@ package com.spring.mno.community.service;
 
 import java.util.List;
 
+import com.spring.mno.common.Criteria;
 import com.spring.mno.community.domain.CommunityVO;
-import com.spring.mno.community.domain.Criteria;
 
 public interface CommunityService {
 

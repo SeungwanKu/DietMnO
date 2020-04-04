@@ -1,4 +1,4 @@
-package com.spring.mno.community.domain;
+package com.spring.mno.common;
 
 import org.springframework.web.util.UriComponentsBuilder;
 
