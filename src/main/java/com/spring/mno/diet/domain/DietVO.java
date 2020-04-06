@@ -10,7 +10,7 @@ public class DietVO {
 	private String title;
 	private String content;
 	private String writer;
-	private Date regDate;
+	private String regDate;
 	private int viewCnt;
 	private String fileName;
 	private MultipartFile uploadFile;
@@ -38,10 +38,10 @@ public class DietVO {
 	public void setWriter(String writer) {
 		this.writer = writer;
 	}
-	public Date getRegDate() {
+	public String getRegDate() {
 		return regDate;
 	}
-	public void setRegDate(Date regDate) {
+	public void setRegDate(String regDate) {
 		this.regDate = regDate;
 	}
 	public int getViewCnt() {

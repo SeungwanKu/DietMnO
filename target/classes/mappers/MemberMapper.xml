@@ -1,105 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.spring.mno.mappers.community">
-<sql id="searchCondition">
-		<if test="searchType != null">
-			<if test="searchType == 't'.toString()">
-				and title like concat('%', #{keyword}, '%')
-			</if>
-			<if test="searchType == 'c'.toString()">
-				and content like concat('%', #{keyword}, '%')
-			</if>
-			<if test="searchType == 'w'.toString()">
-				and writer like concat('%', #{keyword}, '%')
-			</if>
-			<if test="searchType == 'tc'.toString()">
-				and (title like concat('%', #{keyword}, '%')
-					or content like concat('%', #{keyword}, '%'))
-			</if>
-			<if test="searchType == 'all'.toString()">
-				and (title like concat('%', #{keyword}, '%')
-					or content like concat('%', #{keyword}, '%')
-					or writer like concat('%', #{keyword}, '%'))
-			</if>
-		</if>
-	</sql>
-	<!-- 게시물 목록 -->
-	<select id="list"
-		resultType="com.spring.mno.community.domain.CommunityVO">
-		select
-		bno, title, content, writer, regDate, viewCnt
-		from
-		tbl_board
-	</select>
-
-	<!-- 게시물 작성 -->
-	<insert id="write"
-		parameterType="com.spring.mno.community.domain.CommunityVO">
-		insert into
-		tbl_board(title, content, writer, regDate,fileName)
-		values(#{title}, #{content}, #{writer},now(),#{fileName})
-	</insert>
-
-	<!-- 게시물 조회 -->
-	<select id="view" parameterType="int"
-		resultType="com.spring.mno.community.domain.CommunityVO">
-		select
-		bno, title, content, writer, regDate, viewCnt, fileName
-		from
-		tbl_board
-		where
-		bno = #{bno}
-	</select>
-
-	<!-- 게시물 수정 -->
-	<update id="modify"
-		parameterType="com.spring.mno.community.domain.CommunityVO">
-		update
-		tbl_board
-		set
-		title = #{title},
-		content = #{content},
-		writer = #{writer}
-		where bno = #{bno}
-	</update>
-
-	<!-- 게시물 삭제 -->
-	<delete id="delete" parameterType="int">
-		delete
-		from tbl_board
-		where bno = #{bno}
-	</delete>
-	
-	<!-- 게시물 총 개수 -->
-	<select id="gettotalcount" resultType="int">
-		select count(bno)
-		from tbl_board
-		where bno > 0
-		<include refid="searchCondition"></include>
-	</select>
-	
-
-	<!-- 게시물 목록 + 페이징 -->
-	<select id="listPage"
-		resultType="com.spring.mno.community.domain.CommunityVO">
-		select
-		*
-		from tbl_board
-		where bno > 0
-		<include refid="searchCondition"></include>
-		order by bno desc, regDate desc
-		limit #{pageStart}, #{perPageNum}
-	</select>
-	<!-- 조회수 증가 -->
-	<update id="updateViewCnt">
-		update tbl_board
-		set viewCnt = viewCnt + 1
-		where bno = #{bno}
-	</update>
-	<!-- d아이씨 -->
-	
+   <mapper namespace = "com.spring.mno.mappers.Member">
+   
+ 
+   
    	<select id = "getrecommends" resultType = "rec" parameterType = "int">
 		select * from Recommend where Rec_category={#Rec_category} order by rand() limit 1,8;
 	   </select>
@@ -123,7 +29,7 @@
   
    
  	<insert id = "insertBmi"  parameterType = "bmi">
-         INSERT INTO bmi(userid,weight,height,bmi,bmi_date) VALUES(#{userid}, #{weight}, #{height},#{bmi},#{bmi_date})
+         INSERT INTO bmi VALUES(#{bmi_id}, #{userid}, #{weight}, #{height},#{bmi},#{bmi_date})
       </insert>
       
 
@@ -135,7 +41,7 @@
 
 
  	<insert id = "insertDiet_info"  parameterType = "diet_info">
-         INSERT INTO diet_info(userid,dates,foodtype,foodname,eat,cal) VALUES( #{user}, #{dates}, #{foodtype}, #{foodname},#{eat},#{cal}) 
+         INSERT INTO diet_info VALUES(diet_seq.nextval, #{user}, #{dates}, #{foodtype}, #{foodname},#{eat},#{cal}) 
       </insert>
      
  	  <select id = "getdiet_infolist" resultType = "diet_info" parameterType = "Dates" >
@@ -174,5 +80,5 @@
       </delete>  -->
        
       
-	
-</mapper>
+      
+   </mapper>

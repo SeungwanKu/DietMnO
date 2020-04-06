@@ -1,5 +1,6 @@
 package com.spring.mno;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
@@ -20,17 +21,13 @@ import com.spring.mno.community.service.CommunityService;
  * Handles requests for the application home page.
  */
 @Controller
-public class HomeController {
-	@Inject
-	private CommunityService service;
-	
-	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home(Criteria cri, Model model) throws Exception {
-		System.out.println("메인페이지 시작");
-		List<CommunityVO> list = null;
-		list = service.listPage(cri);
-		model.addAttribute("list", list);
-		return "home";
+	public class HomeController {
+		@RequestMapping(value="/",method =RequestMethod.GET)
+		public String home(Model model) {
+			Date date=new Date();
+			model.addAttribute("serverTime",date);
+			return "home";
+		}
 	}
 	
-}
+

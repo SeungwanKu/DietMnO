@@ -98,5 +98,81 @@
 		set viewCnt = viewCnt + 1
 		where bno = #{bno}
 	</update>
+	<!-- d아이씨 -->
+	
+   	<select id = "getrecommends" resultType = "rec" parameterType = "int">
+		select * from Recommend where Rec_category={#Rec_category} order by rand() limit 1,8;
+	   </select>
+   		<select id = "getrecommends2" resultType = "rec" parameterType = "int">
+			select * from Recommend where  rec_id=#{rec_id}
+	   </select>
+ 	<insert id = "insertrecommend"  parameterType = "rec">
+         INSERT INTO Recommend VALUES(Recommend_seq.nextval, #{rec_food1},#{rec_food2},#{rec_food3}, #{rec_category},#{rec_nutrient},#{rec_cal},#{rec_price} )
+      </insert>
+      
+ 	<insert id = "insertpay"  parameterType = "paylist">
+         INSERT INTO paylist VALUES(paylist_seq.nextval, #{paylist_memberid}, #{paylist_orderlist} ,#{paylist_date},#{paylist_price})
+      </insert>
+  	 <select id = "getpaylist" resultType = "paylist" parameterType = "Dates" >
+         SELECT * FROM paylist WHERE paylist_date*10000 >= #{date1}  AND #{date2}*10000+9999 >= paylist_date AND  paylist_memberid=#{user} ORDER BY paylist_date
+      </select>
+  	 <select id = "getpaylists" resultType = "paylist" parameterType = "Dates" >
+         SELECT * FROM paylist WHERE paylist_date*10000 >= #{date1}  AND #{date2}*10000+9999 >= paylist_date  ORDER BY paylist_date
+      </select>
+  
+  
+   
+ 	<insert id = "insertBmi"  parameterType = "bmi">
+         INSERT INTO bmi(userid,weight,height,bmi,bmi_date) VALUES(#{userid}, #{weight}, #{height},#{bmi},#{bmi_date})
+      </insert>
+      
+
+ 	  <select id = "getbmis" resultType = "bmi" parameterType = "Dates" >
+         SELECT * FROM bmi WHERE bmi_date >= #{date1}  AND #{date2} >= bmi_date AND userid=#{user} ORDER BY bmi_date
+      </select>
+      
+		
+
+
+ 	<insert id = "insertDiet_info"  parameterType = "diet_info">
+         INSERT INTO diet_info(userid,dates,foodtype,foodname,eat,cal) VALUES( #{user}, #{dates}, #{foodtype}, #{foodname},#{eat},#{cal}) 
+      </insert>
+     
+ 	  <select id = "getdiet_infolist" resultType = "diet_info" parameterType = "Dates" >
+         SELECT * FROM diet_info WHERE dates >= #{date1}*10000  AND #{date2}*10000+9999 >= dates AND userid=#{user} ORDER BY dates
+      </select>
+      
+ 	  
+      
+	   
+   
+   	<!--  resultMap = "MemberResultMap"-->
+   	
+ 	   <select id = "getmember" resultType = "member" parameterType = "String">
+         SELECT * FROM member where id=#{id}
+      </select>
+ 	   <select id = "getMembers" resultType = "member" >
+         SELECT * FROM member
+      </select>
+      <insert id = "insertMember" parameterType = "member">
+         INSERT INTO member VALUES(#{id},#{passwd1},#{name}, #{email}, #{phone},#{addr},#{ssn},#{usertype})
+      </insert>
+       <update id = "updateMember" parameterType = "member" >
+         UPDATE member SET name = #{name}, email = #{email}, phone = #{phone} ,addr = #{addr} WHERE id = #{id}
+      </update>
+      
+      <!--
+      <select id = "selectUpdateMember" resultType = "member" parameterType = "int">
+         SELECT * FROM tab_mybatis WHERE id = #{id}
+      </select>
+      
+      
+     
+      
+      <delete id = "deleteMember" parameterType = "int">
+         DELETE tab_mybatis WHERE id = #{id}
+      </delete>  -->
+       
+      
 	
 </mapper>
