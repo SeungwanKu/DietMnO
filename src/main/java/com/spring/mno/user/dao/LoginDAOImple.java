@@ -27,22 +27,20 @@ public class LoginDAOImple implements LoginDAO {
 
 	@Override
 	public void insertMember(MemberVO member) {
-//		MemberMapper memberMapper = sqlSession.getMapper(MemberMapper.class);
-//		memberMapper.insertMember(member);
+		sqlSession.insert(namespace+".insertMember",member);
+
 	}
 
 	@Override
 	public MemberVO memberinfo(String id) {
 		
-//		MemberMapper memberMapper = sqlSession.getMapper(MemberMapper.class);
-		MemberVO member = /*memberMapper.getmember(id);*/ null;
-		return member;
+		return sqlSession.selectOne(namespace+".getmember",id);
 	}
 
 	@Override
 	public void updateMember(MemberVO member) {
 	
-//		MemberMapper memberMapper = sqlSession.getMapper(MemberMapper.class);
-//		memberMapper.updateMember(member);
+		sqlSession.update(namespace+".updateMember",member);
+
 	}
 }

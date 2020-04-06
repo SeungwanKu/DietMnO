@@ -3,13 +3,13 @@ package com.spring.mno.rec.domain;
 public class Recommendvo {
 	int rec_id;
 	String id;
-	String rec_food1;	  //�Ĵ�
-	String rec_food2;	  //�Ĵ�
-	String rec_food3;	  //�Ĵ�
-	String rec_category;  //��� ���� ä�� ����	
-	String rec_nutrient; //ź���� ���缺��
-	String rec_cal; //Į�θ�
-	int rec_price; //����
+	String rec_food1;	  
+	String rec_food2;	 
+	String rec_food3;	 
+	String rec_category;  
+	String rec_nutrient; 
+	String rec_cal;
+	int rec_price; 
 	public String getId() {
 		return id;
 	}
