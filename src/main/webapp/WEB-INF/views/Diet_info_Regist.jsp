@@ -15,120 +15,28 @@ for(int i = 0 ; i<cookies.length; i++){
 }
 %>
     <% Date date; %>
+    <jsp:include page="include/header.jsp"></jsp:include>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<style>
-    header{
-    text-align: right;
-    background-color: skyblue;
-    }
-        ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        background-color: skyblue;
-    }
-    ul:after{
-        content:'';
-        display: block;
-        clear:both;
-    }
-    li {
-        float: left;
-        position: relative;
-    }
-    li a {
-        display: block;
-        color: black;
-        font-size: 20px;
-        text-align: center;
-        padding: 14px 36px;
-        text-decoration: none;
-    }
-    li a:hover:not(.active) {
-        background-color: yellowgreen;
-    }
-    .active {
-        background-color: #4CAF50;
-    }
-    .side{
-float: left;
-  width: 30%;
-  height: 700px; 
-}
-    table.blueTable {
-        margin-top: 100px;
-  border: 1px solid #1C6EA4;
-  background-color: #EEEEEE;
-  width: 100%;
-  text-align: left;
-  border-collapse: collapse;
-  width: 700px;
 
-}
-table.blueTable td, table.blueTable th {
-  border: 1px solid #AAAAAA;
-  padding: 3px 2px;
-  text-align: center;
- 
-}
-table.blueTable tbody td {
-  font-size: 20px;
-}
-table.blueTable tr:nth-child(even) {
-  background: #D0E4F5;
-}
-table.blueTable thead {
-  background: #1C6EA4;
-  background: -moz-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
-  background: -webkit-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
-  background: linear-gradient(to bottom, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
-  border-bottom: 2px solid #444444;
-}
-table.blueTable thead th {
-  font-size: 15px;
-  font-weight: bold;
-  color: #FFFFFF;
-  border-left: 2px solid #D0E4F5;
-}
-table.blueTable thead th:first-child {
-  border-left: none;
-}
-
-    body{
-        background: rosybrown;
+    
+    <style >
+    .body{
+    text-align: center;
     }
-select{
-    width: auto;
-    height: 50px;
-    font-size: 30px;
-  
-}
-
- input{
-    font-size: 30px;
-    margin: 5px;
-} 
     </style>
-    
-    
     </head>
-    <header >  <jsp:include page="header.jsp" />
-    </header>
+    
 
 
-    <body>
-    <div class="side">
-    <h1>식단 등록</h1>
-    <a href="Diet"><h2>식단 등록</h2></a>
-    <a href="Diet_info_List"><h2>식단 내역</h2></a>
-    </div>
+   <div class="body">
+    <div class="container">
 <form action="Diet_info_Regist" method="POST">
 <input type="hidden" name="user" id="user" value="<%= id %>"/>
-<table class="blueTable">
+<table class="table table-striped">
 <tr>
 <td><label>날짜 :</label></td>
   <td colspan="4"><input name="dates" id="dates" type="datetime-local"  /></td>
@@ -163,7 +71,7 @@ select{
             </select></td>
         </tr>
         <tr>
-        <td colspan="5"> <input type="submit" value="등록"  onclick="send()"/></td>
+        <td colspan="5"> <input type="submit" value="등록"  id="searchBtn"  onclick="send()"/></td>
         </tr>
 </table>
 <script >
@@ -179,5 +87,7 @@ window.onload = function () {
 	}	
 </script>
 </form>
-</body>
+</div>
+</div>
 </html>
+<jsp:include page="include/footer.jsp"></jsp:include>

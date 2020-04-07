@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>com.spring.mno</OriginalElement>
+  <nodes>
+    <node x="0.0" y="329.201171875">com.spring.mno.diet</node>
+    <node x="0.0" y="503.201171875">com.spring.mno.ht</node>
+    <node x="30.0" y="10.201171875">com.spring.mno.common</node>
+    <node x="290.0" y="242.201171875">com.spring.mno.fooddic</node>
+    <node x="0.0" y="416.201171875">com.spring.mno.rec</node>
+    <node x="218.0" y="416.201171875">com.spring.mno.bmi</node>
+    <node x="0.0" y="127.201171875">com.spring.mno.HomeController</node>
+    <node x="0.0" y="242.201171875">com.spring.mno.community</node>
+    <node x="230.0" y="329.201171875">com.spring.mno.user</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.spring.mno.common" target="com.spring.mno.common">
+      <point x="52.25" y="21.0" />
+      <point x="186.75" y="82.201171875" />
+      <point x="0.0" y="82.201171875" />
+      <point x="0.0" y="20.701171875" />
+      <point x="-104.5" y="-10.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.5000000000000001" x="258.7380952380952" y="208.66269841269855" />
+  <SelectedNodes>
+    <node>com.spring.mno.community</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Inner Classes</Category>
+    <Category>Properties</Category>
+    <Category>Methods</Category>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

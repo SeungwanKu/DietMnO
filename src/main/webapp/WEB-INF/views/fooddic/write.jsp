@@ -20,10 +20,7 @@
 			<label for="content">내용</label>
 			<textarea name="content" id="content" class="form-control" rows="3" placeholder="Enter"></textarea>		
 		</div>
-		<div class="form-group">
-			<label for="writer">작성자</label>
-			<input type="text" name="writer" id="writer" class="form-control" placeholder="Enter Writer"/>		
-		</div>
+		<input type="hidden" name="writer" id="writer" class="form-control" value="<%=id%>"/>
 		<div class="form-group"></div>
 		<label for="upload">업로드</label> 
 		<input type="file" name="uploadFile" id="uploadFile" class="form-control"/>

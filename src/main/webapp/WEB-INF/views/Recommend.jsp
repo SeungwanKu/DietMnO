@@ -14,128 +14,23 @@ for(int i = 0 ; i<cookies.length; i++){
 	}
 }
 %>
+<jsp:include page="include/header.jsp"></jsp:include>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
-<style>
-    body{
-        background: rosybrown;
-    }
-.side{
-	float: left;
-  width: 30%;
-  height: 700px; 
-}
-.list{
-    margin-top: 100px;
-    text-align: left ;
-    font-size: 50px;
-}
 
-select{
-    width: 80px;
-    height: 50px;
-    font-size: 30px;
-}
-header{
-text-align: right;
-background-color: skyblue;
-}
-    ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    background-color: skyblue;
-}
-ul:after{
-    content:'';
-    display: block;
-    clear:both;
-}
-li {
-    float: left;
-    position: relative;
-}
-
-li a {
-    display: block;
-    color: black;
-    font-size: 20px;
+<style >
+    .body{
     text-align: center;
-    padding: 14px 36px;
-    text-decoration: none;
-}
-li a:hover:not(.active) {
-    background-color: yellowgreen;
-}
-.active {
-    background-color: #4CAF50;
-}
-
-table.blueTable {
-  border: 1px solid #1C6EA4;
-  border-radius: 20px;
-  background-color: #EEEEEE;
-  width: 100%;
-  text-align: left;
-  border-collapse: collapse;
-  width: 700px;
-    
-}
-table.blueTable td, table.blueTable th {
-  border: 1px solid #AAAAAA;
-  padding: 3px 2px;
-  text-align: center;
- 
-}
-table.blueTable tbody td {
-  font-size: 20px;
-}
-table.blueTable tr:nth-child(even) {
-  background: #D0E4F5;
-}
-table.blueTable thead {
-  background: #1C6EA4;
-  background: -moz-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
-  background: -webkit-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
-  background: linear-gradient(to bottom, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
-  border-bottom: 2px solid #444444;
-}
-table.blueTable thead th {
-  font-size: 15px;
-  font-weight: bold;
-  color: #FFFFFF;
-  border-left: 2px solid #D0E4F5;
-}
-table.blueTable thead th:first-child {
-  border-left: none;
-}
- input{
-    font-size: 20px;
-    margin: 5px;
-} 
-
-</style>
-<script>
-
-</script>
+    }
+    </style>
 
 </head>
-<header >  <jsp:include page="header.jsp" />
-</header>
-<body>
-<div class="side">
-    <h1>식단 추천</h1>
-    <a href="recform"><h2>식단 추천</h2></a>
-    <a href="paylistform"><h2>결제 내역</h2></a>
-    <%if(usertype.equals("2")){%>
-    <a href="recRegform"><h2>식단등록</h2></a>
-    <a href="allpaylistform"><h2>전체 결제 내역</h2></a>
-    <%} %>
-</div>
 
+<div class="body">
+
+<div class="container">
 <form action="rec" method="POST">
 <input type="submit" value="식단 추천 받기">
 <input type="radio" name="rec_category" value="1" checked="checked">잡식
@@ -146,7 +41,7 @@ table.blueTable thead th:first-child {
 
 <form name="pay" action="pay" method="POST">
 <input type="hidden" name="user" id="user" value="<%= id %>"/>
-	<table class="blueTable">
+	<table class="table table-striped">
     <thead><th>요일</th><th>아침</th><th>점심</th><th>저녁</th><th>탄단지</th><th>칼로리</th><th>가격</th></thead>
    	 	<%int i=0; 
    	 		String[] a={"월","화","수","목","금","토","일"};
@@ -164,16 +59,12 @@ table.blueTable thead th:first-child {
 		<%i=i+1; %>
 	</c:forEach>
 	</table>
-<input type="button" value="결제하기" onclick="sub()" >
+<input type="button" id="searchBtn"  value="결제하기" onclick="sub()" >
 </form>
-
+</div>
 <script >
 
-window.onload = function () {
-if(<%=id%>==null){
-location.href='/MnOBmi/loginform';
-}
-}
+
 function sub() {
 	var chkbox = document.getElementsByName('rec_id');
 	var chk = false; 
@@ -193,5 +84,6 @@ function sub() {
 }
 </script>
 
-</body>
+</div>
 </html>
+<jsp:include page="include/footer.jsp"></jsp:include>

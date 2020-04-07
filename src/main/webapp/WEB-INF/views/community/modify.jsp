@@ -34,4 +34,5 @@
 		<a href="/community/view${cri.makeQuery()}&bno=${view.bno}" class="btn btn-danger">취소</a>
 	</div>		
 </form>
+
 <%@include file="../include/footer.jsp" %>

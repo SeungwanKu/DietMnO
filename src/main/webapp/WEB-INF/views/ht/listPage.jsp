@@ -39,7 +39,7 @@
 </div>
 	
 <!-- 데이터 출력 -->	
-<table class="table table-bordered">
+<table class="table table-striped">
 	<tr>
 		<th style="width: 10px">hbno</th>
 		<th>TITLE</th>
