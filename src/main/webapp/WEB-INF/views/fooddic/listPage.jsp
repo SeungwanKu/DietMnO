@@ -49,9 +49,9 @@
 	</tr>
 	<c:forEach items="${list}" var="list">
 		<tr>
-			<td>${ list.bno }</td>
+			<td>${ list.fbno }</td>
 			<!-- PageMaker의 makeQuery 메소드 이용해서 URI 생성 -->
-			<td><a href="/community/view${pageMaker.makeQuery(pageMaker.cri.page)}&bno=${list.bno}">${list.title}</a></td>
+			<td><a href="/fooddic/view${pageMaker.makeQuery(pageMaker.cri.page)}&fbno=${list.fbno}">${list.title}</a></td>
 			<td>${ list.writer}</td>
 			<td><fmt:formatDate pattern="YYYY-MM-dd " value="${ list.regDate}"/></td>
 			<td>${ list.viewCnt}</td>
@@ -61,8 +61,8 @@
 
 <!-- 등록, dummy 버튼 -->
 <div>
-	<a href="/community/write"><button class="btn btn-primary">새글등록</button></a>
-	<a href="/community/listPage" class="btn btn-warning">처음목록</a>
+	<a href="/fooddic/write"><button class="btn btn-primary">새글등록</button></a>
+	<a href="/fooddic/listPage" class="btn btn-warning">처음목록</a>
 </div>
 
 <!-- 페이지 번호 -->	

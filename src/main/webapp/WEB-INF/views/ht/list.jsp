@@ -50,16 +50,16 @@
 			<td>${ list.bno }</td>
 			<td><a href="/community/view${pageMaker.makeQuery(pageMaker.cri.page)}&bno=${list.bno}">${list.title}</a></td>
 			<td>${ list.writer}</td>
-			<td><fmt:formatDate pattern="YYYY-MM-dd " value="${ list.regDate}"/></td>
+			<td><fmt:formatDate pattern="YYYY-MM-dd HH:mm:ss" value="${ list.regDate}"/></td>
 			<td>${ list.viewCnt}</td>
 		</tr>
 	</c:forEach>
 </table>
 
 <div>
-	<a href="/community/write${pageMaker.makeQuery(pageMaker.cri.page)}"><button class="btn btn-primary">새글등록</button></a>
+	<a href="/foodDic/write${pageMaker.makeQuery(pageMaker.cri.page)}"><button class="btn btn-primary">새글등록</button></a>
 	<!-- 처음 목록 버튼 추가 -->
-	<a href="/community/listPage" class="btn btn-warning">처음목록</a>
+	<a href="/foodDic/listPage" class="btn btn-warning">처음목록</a>
 </div>
 
 <!-- 페이지 번호 -->	

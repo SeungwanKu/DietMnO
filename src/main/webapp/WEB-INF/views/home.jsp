@@ -13,7 +13,9 @@
 <a href="Diet">diet</a>
 <a href="loginform">login</a>
 <a href="recform">recform</a>
-<a href="/community/listPage">글목록</a>
+<a href="/community/listPage">커뮤글목록</a>
+<a href="/fooddic/listPage">음식사전목록</a>
+<a href="/ht/listPage">홈트목록</a>
 
 </body>
 </html>
