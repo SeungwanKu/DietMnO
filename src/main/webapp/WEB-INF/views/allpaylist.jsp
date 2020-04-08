@@ -30,15 +30,11 @@ for(int i = 0 ; i<cookies.length; i++){
 </head>
 
 <div class="body">
-<%-- <div class="side">
-    <h1>식단 추천</h1>
-    <a href="recform"><h2>식단 추천</h2></a>
-    <a href="paylistform"><h2>결제 내역</h2></a>
-    <%if(usertype.equals("2")){%>
-    <a href="recRegform"><h2>식단등록</h2></a>
-    <a href="allpaylistform"><h2>전체 결제 내역</h2></a>
-    <%} %>
-</div> --%>
+ <%if(!(usertype.equals("2")) ){ %>
+  <script>
+location.href='/';
+</script>
+  <%} %>
 <div class="container">
 <form action="allpaylist" method="POST">
 <label>날짜 :</label>

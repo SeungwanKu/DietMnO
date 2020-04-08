@@ -14,6 +14,7 @@ public class HtVO {
 	private int viewCnt;
 	private String fileName;
 	private MultipartFile uploadFile;
+	private String video;
 
 	public int getHbno() {
 		return hbno;
@@ -62,5 +63,11 @@ public class HtVO {
 	}
 	public void setUploadFile(MultipartFile uploadFile) {
 		this.uploadFile = uploadFile;
+	}
+	public String getVideo() {
+		return video;
+	}
+	public void setVideo(String video) {
+		this.video = video;
 	}
 }

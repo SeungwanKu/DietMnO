@@ -134,4 +134,5 @@ public class CommunityController {
         //모델에 추가
 		model.addAttribute("pageMaker", pageMaker);
 	}
+	
 }

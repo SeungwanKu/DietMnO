@@ -69,9 +69,17 @@ public class LoginController {
 	}
 	
 	@RequestMapping("/login")
-	public ModelAndView  login(HttpServletResponse response,@RequestParam String id,@RequestParam String passwd1) {
+	public String  login(HttpServletResponse response,@RequestParam String id,@RequestParam String passwd1) {
 		ModelAndView mav =new ModelAndView();
 		boolean loginSuccess=loginService.login(id,passwd1,response);
+		login2(loginSuccess);
+		return "redirect:/login2?loginSuccess="+loginSuccess;
+	}
+	
+	@RequestMapping("/login2")
+	public ModelAndView  login2(boolean loginSuccess) {
+		ModelAndView mav =new ModelAndView();
+		
 		if(loginSuccess) {
 			mav.setViewName("home");			
 		}

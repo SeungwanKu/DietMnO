@@ -61,7 +61,9 @@
 
 <!-- 등록, dummy 버튼 -->
 <div>
+<%if(usertype.equals("2") ){ %>
 	<a href="/ht/write"><button class="btn btn-primary">새글등록</button></a>
+	<%} %>
 	<a href="/ht/listPage" class="btn btn-warning">처음목록</a>
 </div>
 

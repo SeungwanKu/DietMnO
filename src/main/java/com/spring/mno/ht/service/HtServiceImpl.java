@@ -21,6 +21,7 @@ public class HtServiceImpl implements HtService {
 	public List<HtVO> list() throws Exception {
 		// TODO Auto-generated method stub
 		return dao.list();
+		
 	}
 
 	@Override

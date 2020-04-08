@@ -5,6 +5,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" 
 	pageEncoding="UTF-8"%>
 <%@include file="../include/header.jsp" %>
+ <%if(!(usertype.equals("2")) ){ %>
+  <script>
+location.href='/';
+</script>
+  <%} %>
 <form role="form" method="post" enctype="multipart/form-data">
 	<div class="box-body">
 	
@@ -16,6 +21,12 @@
 			<label for="title">제목</label>
 			<input type="text" id="title" name="title" class="form-control" placeholder="Enter Title"/>		
 		</div>
+		
+		<div class="form-group">
+			<label for="title">업로드영상</label>
+			<input type="text" id="video" name="video" class="form-control" placeholder="Enter Title"/>		
+		</div>
+		
 		<div class="form-group">
 			<label for="content">내용</label>
 			<textarea name="content" id="content" class="form-control" rows="3" placeholder="Enter"></textarea>		

@@ -50,7 +50,7 @@ for(int i = 0 ; i<cookies.length; i++){
 			<td>${diet_infolist.dates}</td>
 			<td>${diet_infolist.foodtype}</td>
 			<td>${diet_infolist.foodname}</td>
-			<td>${diet_infolist.eat}</td>
+			<td>${diet_infolist.eat} 그릇</td>
 			<td>${diet_infolist.cal}</td>		
 		</tr>
 	</c:forEach>

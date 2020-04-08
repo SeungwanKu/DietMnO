@@ -28,11 +28,11 @@ for(int i = 0 ; i<cookies.length; i++){
 
     
 <div class="body">
-<% if(!usertype.equals("2")){ %>
-<script>
-	location.href="/";
+ <%if(!(usertype.equals("2")) ){ %>
+  <script>
+location.href='/';
 </script>
-<%} %>
+  <%} %>
 
 <div class="container">
 	<form action="recReg">

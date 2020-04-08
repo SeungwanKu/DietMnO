@@ -26,7 +26,8 @@ public ArrayList<Diet_info> diet_infos(String date1, String date2) {
 	@Override
 	public void addinfo(Diet_info diet_info) {
 		// TODO Auto-generated method stub
-		diet_info.setCal("111");
+		int cal=(int) (Integer.parseInt(diet_info.getCal())* Double.valueOf(diet_info.getEat()));
+		diet_info.setCal(Integer.toString(cal));
 		diet_infoDAO.insetdiet_info(diet_info);
 	}
 

@@ -38,15 +38,15 @@
 	<insert id="write"
 		parameterType="com.spring.mno.ht.domain.HtVO">
 		insert into
-		ht(title, content, writer, regDate,fileName)
-		values(#{title}, #{content}, #{writer},now(),#{fileName})
+		ht(title, content, writer, regDate,fileName,video)
+		values(#{title}, #{content}, #{writer},now(),#{fileName},#{video})
 	</insert>
 
 	<!-- 게시물 조회 -->
 	<select id="view" parameterType="int"
 		resultType="com.spring.mno.ht.domain.HtVO">
 		select
-		hbno, title, content, writer, regDate, viewCnt, fileName
+		hbno, title, content, writer, regDate, viewCnt, fileName, video
 		from
 		ht
 		where

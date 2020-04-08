@@ -5,6 +5,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" 
 	pageEncoding="UTF-8"%>
 <%@include file="../include/header.jsp" %>
+ <%if(!(usertype.equals("2")) ){ %>
+  <script>
+location.href='/';
+</script>
+  <%} %>
 <form role="form" method="post" enctype="multipart/form-data">
 	<div class="box-body">
 	

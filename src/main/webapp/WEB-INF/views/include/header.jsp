@@ -44,8 +44,8 @@ for(int i = 0 ; i<cookies.length; i++){
 location.href='/loginform';
 </script>
 <%} %>
-  
-  
+ 
+
       <!-- jQuery 2.1.4 -->
     <script src="/resources/plugins/jQuery/jQuery-2.1.4.min.js"></script>
   <body class="skin-blue sidebar-mini">
@@ -53,7 +53,7 @@ location.href='/loginform';
       
       <header class="main-header">
         <!-- Logo -->
-        <a href="/" class="logo">
+        <a href="/home" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
           <span class="logo-mini"><b>M</b>&O</span>
           <!-- logo for regular state and mobile devices -->

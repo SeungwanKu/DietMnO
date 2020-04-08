@@ -5,9 +5,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
+<script src="https://www.youtube.com/player_api"></script>
 <%@include file="../include/header.jsp"%>
 	<%
 HtVO vo=(HtVO) request.getAttribute("view");
+	String v= vo.getVideo();
+	
 %>
 <div id="saveOK" class="alert alert-warning hidden" role="alert">글이 수정되었습니다.</div>
 <div class="box-body">
@@ -25,6 +28,12 @@ HtVO vo=(HtVO) request.getAttribute("view");
 		<label for="writer" >Writer</label>
 		<input type="text" id="writer" name="writer" class="form-control" value="${view.writer}" readonly="readonly"/>		
 	</div>
+	
+	<div id="youTubePlayer1"></div><!-- 플레이어를 불러올 영역-->
+ 
+
+	
+	
 	<%if(vo.getFileName()!=null) {%>
 	<div>
 	<img src="/fileDownload.do?fileName=${view.fileName}" width="500px" height="auto" />
@@ -40,6 +49,53 @@ HtVO vo=(HtVO) request.getAttribute("view");
 	<button id="btn-remove" class="btn btn-danger">삭제</button>
 	<%} %>
 </div>
+
+	<script>
+	var tag = document.createElement('script');
+	tag.src = "https://www.youtube.com/player_api";
+	var firstScriptTag = document.getElementsByTagName('script')[0];
+	firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+	// 플레이어변수 설정
+	var youTubePlayer1;
+
+	function onYouTubeIframeAPIReady() {
+	    youTubePlayer1 = new YT.Player('youTubePlayer1', {
+	        width: '1000',
+	        height: '563',
+	        videoId: '<%=v%>',
+	        playerVars: {rel: 0},//추천영상 안보여주게 설정
+	        events: {
+	          'onReady': onPlayerReady, //로딩할때 이벤트 실행
+	          'onStateChange': onPlayerStateChange //플레이어 상태 변화시 이벤트실행
+	        }
+	    });//youTubePlayer1셋팅
+	}
+
+	function onPlayerReady(event) {
+	    event.target.playVideo();//자동재생
+	    //로딩할때 실행될 동작을 작성한다.
+	}
+
+	function onPlayerStateChange(event) {
+	    if (event.data == YT.PlayerState.PLAYING) {
+	        //플레이어가 재생중일때 작성한 동작이 실행된다.
+	    }
+	  }
+	 
+	$(document).ready(function () {
+	    $(".btn_play").on("click", function () {
+	        youTubePlayer1.playVideo();//재생
+	    });
+	    $(".btn_stop").on("click", function () {
+	        youTubePlayer1.stopVideo();//정지
+	    });
+	    $(".btn_pause").on("click", function () {
+	        youTubePlayer1.pauseVideo();//일시정지
+	    });
+	});
+  
+</script>
 	
 <script>
 	var result = '${result}';
@@ -56,5 +112,7 @@ HtVO vo=(HtVO) request.getAttribute("view");
 			$('#saveOK').fadeOut(2000);
 		}
 	})
+	
 	</script>
-	<%@include file="../include/footer.jsp" %>
+	
+<%@include file="../include/footer.jsp" %>

@@ -1,21 +1,13 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-<p>${serverTime}</p>
-<a href="bmi">BmiCalc</a>
-<a href="bmilistform">Bmilist</a>
-<a href="Diet">diet</a>
-<a href="loginform">login</a>
-<a href="recform">recform</a>
-<a href="/community/listPage">커뮤글목록</a>
-<a href="/fooddic/listPage">음식사전목록</a>
-<a href="/ht/listPage">홈트목록</a>
 
-</body>
-</html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<jsp:include page="include/header.jsp"></jsp:include>
+<style>
+.img{
+text-align: center;
+}
+</style>
+<div class="img">
+<img src="https://blogfiles.pstatic.net/MjAyMDA0MDhfMjQ2/MDAxNTg2MzQ0NDM2NTM0.rmMoUoI5zp5hGmvgHGQw39WfD0t8TI1pibmCDU29n_Ig.IJuA3jiMcHmuCimBvslTvg5rejj7h2n-2eRTwCEmvCMg.PNG.tprb77021/KakaoTalk_20200408_201113755.png?type=w2">
+</div>
+<jsp:include page="include/footer.jsp"></jsp:include>
