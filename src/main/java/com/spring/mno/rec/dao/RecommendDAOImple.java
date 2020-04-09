@@ -24,7 +24,9 @@ public class RecommendDAOImple implements RecommendDAO{
 	@Override
 	public void insertRec(Recommendvo recommend) {
 		// TODO Auto-generated method stub
-		sqlSession.insert(namespace+".insertrecommend",recommend);
+		
+			sqlSession.insert(namespace+".insertrecommend",recommend);
+		
 	}
 	String rec_id2;
 	

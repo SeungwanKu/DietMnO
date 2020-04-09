@@ -48,7 +48,7 @@ for(int i = 0 ; i<cookies.length; i++){
    	 	%>
    	 <c:forEach items="${recommends}" var="recommends">
 		<tr>	
-			<td><%=a[i]%><input type="checkbox" id="ch" name="rec_id" value="${recommends.rec_id}"></td>
+			<td><input type="checkbox" id="ch" name="rec_id" value="${recommends.rec_id}"><%=a[i]%></td>
 			<td>${recommends.rec_food1}</td>
 			<td>${recommends.rec_food2}</td>
 			<td>${recommends.rec_food3}</td>

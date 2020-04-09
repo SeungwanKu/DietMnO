@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	404에러임
+	<h1>404에러임</h1>
 </body>
 </html>

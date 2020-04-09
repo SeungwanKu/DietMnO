@@ -11,8 +11,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link href="/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 <style >
-    .body{
+    .body,.table table-striped{
     text-align: center;
     }
     </style>

@@ -16,19 +16,17 @@ FoodDicVO vo=(FoodDicVO) request.getAttribute("view");
 		<label for="title">Title</label>
 		<input type="text" id="title" name="title" class="form-control" value="${view.title}" readonly="readonly"/>		
 	</div>
-	<div class="form-group">
-		<label for="content">Content</label>
-		<textarea name="content" id="content" class="form-control" rows="3" readonly="readonly">${view.content}</textarea>		
-	</div>
-	<div class="form-group">
-		<label for="writer" >Writer</label>
-		<input type="text" id="writer" name="writer" class="form-control" value="${view.writer}" readonly="readonly"/>		
-	</div>
 	<%if(vo.getFileName()!=null) {%>
 	<div>
 	<img src="/fileDownload.do?fileName=${view.fileName}" width="500px" height="auto" />
 	</div>
 	<%} %>
+	<div class="form-group">
+		<label for="content">Content</label>
+		<textarea name="content" id="content" class="form-control" rows="10" readonly="readonly">${view.content}</textarea>		
+	</div>
+	
+	
 </div>
 	
 <div>
