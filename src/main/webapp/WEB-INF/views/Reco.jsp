@@ -22,7 +22,7 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
 <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
 <div class="body">
-<h1>식단추천</h1>
+<h1>상세 주문 내역</h1>
 <hr>
  <table class="table table-striped">
     <thead><th>아침</th><th>점심</th><th>저녁</th><th>탄단지</th><th>칼로리</th><th>가격</th></thead>

@@ -35,7 +35,7 @@ for(int i = 0 ; i<cookies.length; i++){
 
    <div class="body">
     <div class="container">
-<form action="Diet_info_Regist" method="POST">
+<form name="Diet_info_Regist" action="Diet_info_Regist" method="POST">
 <h1>식단등록</h1>
 <hr>
 <input type="hidden" name="user" id="user" value="<%= id %>"/>
@@ -47,6 +47,7 @@ for(int i = 0 ; i<cookies.length; i++){
 <tr>
 <td><label>음식 종류: </label></td>
 <td colspan="4"><select class="form-control" name="foodtype" id="ft" onchange="ch()">
+   	<option value="">음식 종류선택</option>
     <option value="한식">한식</option>
     <option value="중식">중식</option>
     <option value="일식">일식</option>
@@ -73,7 +74,7 @@ for(int i = 0 ; i<cookies.length; i++){
             </select> 그릇</td>
         </tr>
         <tr>
-        <td colspan="5"> <input type="submit" class="btn btn-primary" value="등록"  id="searchBtn"  onclick="send()"/></td>
+        <td colspan="5"> <input type="button" class="btn btn-primary" value="등록"  id="searchBtn"  onclick="send()"/></td>
         </tr>
 </table>
 <input type="hidden" id="cal" name="cal" value="">
@@ -154,10 +155,15 @@ function ch() {
 
 
 function send() {
-	alert('저장완료');
-	document.bmiform.submit();
+	var ft=document.getElementById('ft');
+	if(ft.value == ""){
+		alert('음식종류를 선택해주세요');
 	}
-	
+	else{
+	alert('저장완료');
+	document.Diet_info_Regist.submit();
+	}
+}
 window.onload = function () {
 
 	document.getElementById('dates').value=new Date().toISOString().slice(0, 16);

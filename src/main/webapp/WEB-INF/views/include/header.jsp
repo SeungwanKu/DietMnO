@@ -238,7 +238,7 @@ location.href='/loginform';
                 <li><a href="/recform"><i class="fa fa-circle-o"></i> 식단 추천 </a></li>
                 <li><a href="/paylistform"><i class="fa fa-circle-o"></i> 결제 내역 </a></li>
                <%if(usertype.equals("2")){%>
-                <li><a href="/recRegform"><i class="fa fa-circle-o"></i> 식단등록 </a></li>
+                <li><a href="/recRegform"><i class="fa fa-circle-o"></i> 추천식단등록 </a></li>
                 <li><a href="/allpaylistform"><i class="fa fa-circle-o"></i> 전체 결제 내역 </a></li>
              <%} %>
               </ul>

@@ -35,7 +35,7 @@ location.href='/';
   <%} %>
 
 <div class="container">
-	<form action="recReg">
+	<form action="recReg" name="recReg" id="recReg">
 	<h1>식단등록</h1>
 	<hr>
 	<table class="table table-striped">
@@ -45,24 +45,29 @@ location.href='/';
 	<td>저녁식단 </td>
 	</tr>
 	<tr>
-	<td><textarea name="Rec_food1" cols="10px" rows="10px" ></textarea></td>
-	<td><textarea name="Rec_food2" cols="10px" rows="10px" ></textarea></td>
-	<td><textarea name="Rec_food3" cols="10px" rows="10px" ></textarea></td>
+	<td><textarea name="Rec_food1" cols="20px" rows="10px"  required="required"></textarea></td>
+	<td><textarea name="Rec_food2" cols="20px" rows="10px"  required="required"></textarea></td>
+	<td><textarea name="Rec_food3" cols="20px" rows="10px"  required="required"></textarea></td>
 	</tr>
-	<tr><td>탄단지 영양</td> <td colspan="2"><input type="text" name="Rec_nutrient"/></td></tr>
-	<tr><td>칼로리 </td><td colspan="2"><input type="text" name="Rec_cal" /></td></tr>
-	<tr><td>가격 </td><td colspan="2"><input type="number" name="Rec_price" />원</td></tr>
+	<tr><td>탄단지 영양</td> <td colspan="2"><input type="text" name="Rec_nutrient"  required="required"/></td></tr>
+	<tr><td>칼로리 </td><td colspan="2"><input type="text" name="Rec_cal"  required="required"/></td></tr>
+	<tr><td>가격 </td><td colspan="2"><input type="number" name="Rec_price"  required="required"/>원</td></tr>
 	<tr><td>식단 카테고리</td><td colspan="2"> 
 	<input type="radio" name="Rec_category" value="1">잡식
 	<input type="radio" name="Rec_category" value="2">육식
 	<input type="radio" name="Rec_category" value="3">채식
 	</td></tr>
-	<tr><td colspan="3"><input  class = "btn btn-primary" id="searchBtn"  type="submit" value="전송"/></td></tr>
+	<tr><td colspan="3"><input  class = "btn btn-primary" id="searchBtn"  type="button" onclick="send()" value="전송"/></td></tr>
 	</table> 
 	</form>
 </div>	
 </div>
-
+<script>
+function send() {
+	alert('저장완료');
+	document.recReg.submit();
+}
+</script>
 
 </html>
 <jsp:include page="include/footer.jsp"></jsp:include>

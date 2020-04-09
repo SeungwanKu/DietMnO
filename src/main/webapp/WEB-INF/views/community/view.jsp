@@ -20,7 +20,7 @@ CommunityVO vo=(CommunityVO) request.getAttribute("view");
 	</div>
 	<div class="form-group">
 		<label for="content">Content</label>
-		<textarea name="content" id="content" class="form-control" rows="3" readonly="readonly">${view.content}</textarea>		
+		<textarea name="content" id="content" class="form-control" rows="15" readonly="readonly">${view.content}</textarea>		
 	</div>
 	<div class="form-group">
 		<label for="writer">Writer</label>

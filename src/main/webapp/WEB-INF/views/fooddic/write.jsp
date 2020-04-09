@@ -25,12 +25,12 @@
 
 		<div class="form-group">
 			<label for="title">제목</label> <input type="text" id="title"
-				name="title" class="form-control" placeholder="Enter Title" />
+				name="title" class="form-control" placeholder="Enter Title" required="required"/>
 		</div>
 		<div class="form-group">
 			<label for="content">내용</label>
-			<textarea name="content" id="content" class="form-control" rows="3"
-				placeholder="Enter"></textarea>
+			<textarea name="content" id="content" class="form-control" rows="8"
+				placeholder="Enter" required="required"></textarea>
 		</div>
 		<input type="hidden" name="writer" id="writer" class="form-control"
 			value="<%=id%>" />

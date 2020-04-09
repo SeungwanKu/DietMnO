@@ -253,6 +253,7 @@
 .memberReg input[type="text"],
 input[type="password"],
 input[type="number"],
+input[type="file"],
 input[type="email"] {
   border: 0;
   background: none;
@@ -288,7 +289,9 @@ input[type="email"]:focus {
   transition: 0.25s;
   cursor: pointer;
 }
-.memberReg input[type="submit"]:hover {
+.memberReg input[type="submit"]:hover,
+input[type="file"]:hover,
+input[type="button"]:hover {
   background: #2ecc71;
 }
 .memberReg a {
@@ -386,7 +389,8 @@ input[type="email"]:focus {
           <div>이메일</div>
           <input type="email" name="email" id="email"  required="required"/>
           <br>
-          <div></div>
+          <div>프로필 사진 설정</div>
+          
 		<label for="upload"></label> 
 		<input type="file" name="uploadFile" id="uploadFile" class="form-control"/>
 		
