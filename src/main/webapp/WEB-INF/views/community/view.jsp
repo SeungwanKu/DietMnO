@@ -11,6 +11,8 @@ CommunityVO vo=(CommunityVO) request.getAttribute("view");
 
 <div id="saveOK" class="alert alert-warning hidden" role="alert">글이 수정되었습니다.</div>
 <div class="box-body">
+	<h1>커뮤니티</h1>
+	<hr>
 	<span><b>글번호:</b> ${view.bno}</span>	
 	<div class="form-group">
 		<label for="title">Title</label>

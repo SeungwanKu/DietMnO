@@ -32,12 +32,14 @@ for(int i = 0 ; i<cookies.length; i++){
 
 
 <form action="paylist" method="POST">
+<h1>결제 내역</h1>
+<hr>
 <input type="hidden" name="user" id="user" value="<%= id %>"/>
 <label>날짜 :</label>
 <input type="date" name="date1" id="date1" />
     <label>~</label>
    <input type="date" name="date2" id="date2" />
-   <input type="submit"  id="searchBtn" value="조회하기">
+   <input type="submit"  class="btn btn-primary" id=searchBtn" value="조회하기">
 	<table class="table table-striped">
    <thead><th>날짜</th><th>가격</th><th></th></thead>
  

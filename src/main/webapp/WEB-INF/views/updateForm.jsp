@@ -14,6 +14,8 @@
 <div class="body">
 <div class="container">
 <form action="update" method="POST">
+<h1>마이페이지</h1>
+<hr>
 <table class="table table-striped">
 	<tr>
 	 <td>이름</td>

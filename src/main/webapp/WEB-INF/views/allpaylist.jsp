@@ -37,11 +37,13 @@ location.href='/';
   <%} %>
 <div class="container">
 <form action="allpaylist" method="POST">
+<h1>전체 결제내역</h1>
+<hr>
 <label>날짜 :</label>
 <input type="date" name="date1" id="date1" />
     <label>~</label>
    <input type="date" name="date2" id="date2" />
-   <input type="submit" id="searchBtn" value="조회하기">
+   <input type="submit" class="btn btn-primary" id="searchBtn" value="조회하기">
 	<table class="table table-striped">
    <thead><th>아이디</th><th>날짜</th><th>가격</th><th></th></thead>
  

@@ -10,6 +10,8 @@
 FoodDicVO vo=(FoodDicVO) request.getAttribute("view");
 %>
 <div id="saveOK" class="alert alert-warning hidden" role="alert">글이 수정되었습니다.</div>
+<h1>음식사전</h1>
+<hr>
 <div class="box-body">
 	<span><b>글번호:</b> ${view.fbno}</span>	
 	<div class="form-group">

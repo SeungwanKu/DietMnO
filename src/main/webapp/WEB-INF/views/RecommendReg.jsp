@@ -36,6 +36,8 @@ location.href='/';
 
 <div class="container">
 	<form action="recReg">
+	<h1>식단등록</h1>
+	<hr>
 	<table class="table table-striped">
 	<tr>
 	<td>아침식단 </td>
@@ -55,7 +57,7 @@ location.href='/';
 	<input type="radio" name="Rec_category" value="2">육식
 	<input type="radio" name="Rec_category" value="3">채식
 	</td></tr>
-	<tr><td colspan="3"><input  id="searchBtn"  type="submit" value="전송"/></td></tr>
+	<tr><td colspan="3"><input  class = "btn btn-primary" id="searchBtn"  type="submit" value="전송"/></td></tr>
 	</table> 
 	</form>
 </div>	

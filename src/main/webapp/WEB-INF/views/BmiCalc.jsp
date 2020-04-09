@@ -31,6 +31,8 @@ for(int i = 0 ; i<cookies.length; i++){
 <div class="body">
  <div class="container">
 <form name="bmiform" action="BmiCalcs" method = "post">
+<h1>BMI 계산</h1>
+<hr>
 	<div>
 	<h2> 당신의 표준체중과 체질량지수(BMI)는? </h2>
 	<br>
@@ -39,16 +41,16 @@ for(int i = 0 ; i<cookies.length; i++){
 	<br>
 	<input type="number" name="height" id="height"  placeholder="키"> cm
 	<br><br>
-	<input type="button" id="searchBtn" value="계산하기"  onclick="bmicalc()"/>
+	<input type="button" class="btn btn-primary" id=searchBtn" value="계산하기"  onclick="bmicalc()"/>
 	<br>
 	</div>
 
 		<div id="bmi2" style="display:none;">
 		<h3 id="bmih3">나의 신체질량지수(BMI)</h3>
 		<label id="bmila"></label><br>
-		<img src="https://postfiles.pstatic.net/MjAyMDAzMTlfMTg1/MDAxNTg0NjE4MDY1MTEy.dE1f5FmuCx8XTW2LSW6GVwFOPmCg6ewva7ApJ93Cw30g.rfDLI1Ya-ovGCDzIEKIn8iXVTIEoH6pAyJ5KcpxZ-8Qg.PNG.tprb77021/bmi.PNG?type=w773" width="1000px" height="auto">
+		<img src="/resources/bmi.png" width="1000px" height="auto">
 		<br>
-		<input type="submit" id="submit" value="저장하기" onclick="send()" disabled="disabled"/>
+		<input type="submit" class="btn btn-primary" id="submit" value="저장하기" onclick="send()" disabled="disabled"/>
 	</div>
 	
 </form>

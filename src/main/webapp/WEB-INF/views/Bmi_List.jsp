@@ -27,6 +27,8 @@ for(int i = 0 ; i<cookies.length; i++){
 <div class="body">
    <div class="container">
 <form action="bmilist" method="POST">
+<h1>BMI 내역</h1>
+<hr>
 <input type="hidden" name="user" id="user" value="<%= id %>"/>
 
 
@@ -34,7 +36,7 @@ for(int i = 0 ; i<cookies.length; i++){
 <input type="date" name="date1" id="date1" />
     <label>~</label>
    <input type="date" name="date2" id="date2" />
-   <input type="submit" id="searchBtn" value="조회하기">
+   <input type="submit" class="btn btn-primary" id=searchBtn" value="조회하기">
 	<table class="table table-striped">
     <thead><th>날짜</th><th>bmi</th></thead>
    	 <c:forEach items="${bmis}" var="bmis">

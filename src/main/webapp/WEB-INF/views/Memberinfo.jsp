@@ -91,6 +91,7 @@ input[type="email"]:focus {
 <body>
 <div class="container">
 <form action="updateform" method="POST">
+<h1>내정보 수정</h1>
 <table class="table table-striped">
 	<tr>
 	 <td>아이디</td>
@@ -110,7 +111,7 @@ input[type="email"]:focus {
 		<td>${member.addr}</td>
 		<td>${member.ssn}</td>
 	</tr>
-		<tr><td colspan="6"><input   id="searchBtn" type="submit" value="수정"/></td></tr>
+		<tr><td colspan="6"><input   class="btn btn-primary" id="searchBtn" type="submit" value="수정"/></td></tr>
 </table>
 </form>
 </div>

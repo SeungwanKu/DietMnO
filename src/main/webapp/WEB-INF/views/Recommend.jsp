@@ -31,17 +31,21 @@ for(int i = 0 ; i<cookies.length; i++){
 <div class="body">
 
 <div class="container">
+<h1>식단 추천</h1>
+<hr>
 <form action="rec" method="POST">
-<input type="submit" value="식단 추천 받기">
 <input type="radio" name="rec_category" value="1" checked="checked">잡식
 <input type="radio" name="rec_category" value="2">육식
 <input type="radio" name="rec_category" value="3">채식
+<br>
+<input class="btn btn-warning" type="submit" value="식단 추천 받기">
 </form>
+<br>
 
 
 <form name="pay" action="pay" method="POST">
 <input type="hidden" name="user" id="user" value="<%= id %>"/>
-	<table class="table table-striped">
+	<table class="table table-striped" border="1px solid #444444">
     <thead><th>요일</th><th>아침</th><th>점심</th><th>저녁</th><th>탄단지</th><th>칼로리</th><th>가격</th></thead>
    	 	<%int i=0; 
    	 		String[] a={"월","화","수","목","금","토","일"};
@@ -59,7 +63,7 @@ for(int i = 0 ; i<cookies.length; i++){
 		<%i=i+1; %>
 	</c:forEach>
 	</table>
-<input type="button" id="searchBtn"  value="결제하기" onclick="sub()" >
+<input type="button" class = "btn btn-primary" id="searchBtn"  value="결제하기" onclick="sub()" >
 </form>
 </div>
 <script >

@@ -82,6 +82,8 @@ String addr ="";
     	});
     }
     </script>
+    <h1>결제</h1>
+    <hr>
 <table class="table table-striped">
     <thead><th>아침</th><th>점심</th><th>저녁</th><th>탄단지</th><th>칼로리</th><th>가격</th></thead>
    	 <c:forEach items="${recommends}" var="recommends">
@@ -98,7 +100,7 @@ String addr ="";
 	<td colspan="3">총 가격 :</td><td colspan="3">${sum}</td>
 	</tr>
 	</table>
-	<button id="searchBtn"  onclick="pay()">결제하기</button>
+	<button id="searchBtn" class="btn btn-primary"  onclick="pay()">결제하기</button>
 </div>
 </html>
 <jsp:include page="include/footer.jsp"></jsp:include>

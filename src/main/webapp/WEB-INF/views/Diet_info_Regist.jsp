@@ -16,6 +16,7 @@ for(int i = 0 ; i<cookies.length; i++){
 %>
     <% Date date; %>
     <jsp:include page="include/header.jsp"></jsp:include>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,6 +36,8 @@ for(int i = 0 ; i<cookies.length; i++){
    <div class="body">
     <div class="container">
 <form action="Diet_info_Regist" method="POST">
+<h1>식단등록</h1>
+<hr>
 <input type="hidden" name="user" id="user" value="<%= id %>"/>
 <table class="table table-striped">
 <tr>
@@ -43,7 +46,7 @@ for(int i = 0 ; i<cookies.length; i++){
 </tr>
 <tr>
 <td><label>음식 종류: </label></td>
-<td colspan="4"><select name="foodtype" id="ft" onchange="ch()">
+<td colspan="4"><select class="form-control" name="foodtype" id="ft" onchange="ch()">
     <option value="한식">한식</option>
     <option value="중식">중식</option>
     <option value="일식">일식</option>
@@ -53,7 +56,7 @@ for(int i = 0 ; i<cookies.length; i++){
 <tr>
     <td><label>음식 : </label></td>
     <td colspan="4">
-    	<select name="foodname" id="fn">
+    	<select  class="form-control"name="foodname" id="fn">
    <option value="김치찌개">김치찌개</option>
     <option value="된장찌개">된장찌개</option>
     <option value="순두부찌개">순두부찌개</option> 
@@ -62,7 +65,7 @@ for(int i = 0 ; i<cookies.length; i++){
     <tr>
         <td><label>섭취량: </label></td>
         <td colspan="4">
-        	<select name="eat">
+        	<select  class="form-control btn btn-default dropdown-toggle" name="eat" >
             <option value="0.25">1/4</option>
             <option value="0.33">1/3</option>
             <option value="0.5">1/2</option>
@@ -70,7 +73,7 @@ for(int i = 0 ; i<cookies.length; i++){
             </select> 그릇</td>
         </tr>
         <tr>
-        <td colspan="5"> <input type="submit" value="등록"  id="searchBtn"  onclick="send()"/></td>
+        <td colspan="5"> <input type="submit" class="btn btn-primary" value="등록"  id="searchBtn"  onclick="send()"/></td>
         </tr>
 </table>
 <input type="hidden" id="cal" name="cal" value="">

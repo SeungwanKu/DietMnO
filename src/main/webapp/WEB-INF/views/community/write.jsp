@@ -6,6 +6,8 @@
 	pageEncoding="UTF-8"%>
 <%@include file="../include/header.jsp" %>
 <form role="form" method="post" enctype="multipart/form-data">
+<h1>커뮤니티</h1>
+<hr>
 	<div class="box-body">
 	
 		<!-- page와 perPageNum  추가 -->

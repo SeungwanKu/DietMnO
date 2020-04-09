@@ -8,7 +8,8 @@
 
 <div id="registerOK" class="alert alert-info hidden" role="alert">새 글이 등록되었습니다.</div>	
 <div id="removeOK" class="alert alert-danger hidden" role="alert">글이 삭제되었습니다.</div>
-
+<h1>음식사전</h1>
+	<hr>
 	
 <div class="row">
 	<!-- 검색 select 박스 추가 -->

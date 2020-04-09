@@ -31,6 +31,7 @@ for(int i = 0 ; i<cookies.length; i++){
 
  <div class="container">
 <form action="List" method="POST">
+<h1>식단내역</h1>
 <input type="hidden" name="user" id="user" value="<%= id %>"/>
 
 
@@ -38,7 +39,7 @@ for(int i = 0 ; i<cookies.length; i++){
 <input type="date" id="date1" name="date1"/>
     <label>~</label>
    <input type="date" id="date2" name="date2"/>
-   <input type="submit"  id="searchBtn" value="조회하기">
+   <input type="submit" class="btn btn-primary" id="searchBtn" value="조회하기">
    
 	<table class="table table-striped">
     <thead><th>날짜</th><th>음식종류</th><th>음식</th><th>섭취량</th><th>섭취칼로리</th></thead>

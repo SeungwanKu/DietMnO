@@ -22,6 +22,8 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
 <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
 <div class="body">
+<h1>식단추천</h1>
+<hr>
  <table class="table table-striped">
     <thead><th>아침</th><th>점심</th><th>저녁</th><th>탄단지</th><th>칼로리</th><th>가격</th></thead>
    	 <c:forEach items="${recommends}" var="recommends">
@@ -43,6 +45,6 @@
 	<label>주소 : </label>${member.addr}
 	<br>
 	</c:if>
-	<input type="button" id="searchBtn"  value="창닫기" onClick="window.close()">
+	<input type="button" class="btn btn-primary" id="searchBtn"  value="창닫기" onClick="window.close()">
 </div>
 </html>

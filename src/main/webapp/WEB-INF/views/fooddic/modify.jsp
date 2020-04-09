@@ -5,6 +5,8 @@
 
 <%@include file="../include/header.jsp" %>
 <form role="form" method="post">
+<h1>음식사전</h1>
+<hr>
 	<div class="box-body">
 		<span><b>글번호:</b> ${view.fbno}</span>
 		<input type="hidden" name="fbno" value="${view.fbno }" />
