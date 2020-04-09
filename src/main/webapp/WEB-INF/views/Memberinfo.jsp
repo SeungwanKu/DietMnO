@@ -91,7 +91,8 @@ input[type="email"]:focus {
 <body>
 <div class="container">
 <form action="updateform" method="POST">
-<h1>내정보 수정</h1>
+<h1>마이페이지</h1>
+<hr>
 <table class="table table-striped">
 	<tr>
 	 <td>아이디</td>
