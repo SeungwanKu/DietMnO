@@ -72,6 +72,9 @@
 .login_box input[type="submit"]:hover {
   background: #2ecc71;
 }
+.login_box a:hover {
+  background: #f6d55c;
+}
 .login_box a {
   border: 0;
   background: none;

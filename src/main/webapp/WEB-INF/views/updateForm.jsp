@@ -14,7 +14,7 @@
 <div class="body">
 <div class="container">
 <form action="update" method="POST" >
-<h1>마이페이지</h1>
+<h1>내 정보 수정</h1>
 <hr>
 <table class="table table-striped">
 	<tr>
@@ -31,7 +31,7 @@
 		<td><input type="text" name="phone" id="phone" value="${member.phone}"/></td>
 		<td><input type="text" name="addr" id="addr" value="${member.addr}"/></td>
 	</tr>
-		<tr><td colspan="4"><input  id="searchBtn" type="submit" value="수정"/></td></tr>
+		<tr><td colspan="4"><input class="btn btn-primary" id="searchBtn" type="submit" value="수정"/></td></tr>
 </table>
 
 </form>
