@@ -13,7 +13,7 @@
 </head>
 <div class="body">
 <div class="container">
-<form action="update" method="POST">
+<form action="update" method="POST" >
 <h1>마이페이지</h1>
 <hr>
 <table class="table table-striped">
@@ -22,6 +22,7 @@
 	 <td>이메일</td>
 	 <td>전화번호</td>
 	 <td>주소</td>
+	 
 	</tr>
 	<tr>
 		<td><input type="hidden" name="id" value="${member.id}"/>

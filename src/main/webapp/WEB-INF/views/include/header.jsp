@@ -4,6 +4,7 @@
 Cookie[] cookies = request.getCookies(); 
     String id=null;
     String usertype=null;
+    String filename=null;
 for(int i = 0 ; i<cookies.length; i++){                        
 	if(cookies[i].getName().equals("id")){
 		 id=cookies[i].getValue();
@@ -11,6 +12,18 @@ for(int i = 0 ; i<cookies.length; i++){
 	if(cookies[i].getName().equals("usertype")){
 		usertype=cookies[i].getValue();
 	}
+	if(cookies[i].getName().equals("filename")){
+		if(cookies[i].getValue()==""){
+			filename="/fileDownload.do?fileName="+"user2-160x160.jpg";
+		}
+		else{
+		filename="/fileDownload.do?fileName="+cookies[i].getValue();
+		}
+		
+		}
+
+	
+	
 }
 %>  
 <!DOCTYPE html>
@@ -141,13 +154,13 @@ location.href='/loginform';
               <!-- User Account: style can be found in dropdown.less -->
               <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  <img src="/resources/dist/img/user2-160x160.jpg" class="user-image" alt="User Image"/>
+                  <img src="<%=filename %>" class="user-image" alt="User Image"/>
                   <span class="hidden-xs"><%=id %> 님</span>
                 </a>
                 <ul class="dropdown-menu">
                   <!-- User image -->
                   <li class="user-header">
-                    <img src="/resources/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image" />
+                    <img src="<%=filename %>" class="img-circle" alt="User Image" />
                     <p>
                       <%=id %> 님 - Web Developer
                     </p>
@@ -180,7 +193,7 @@ location.href='/loginform';
           <!-- Sidebar user panel -->
           <div class="user-panel">
             <div class="pull-left image">
-              <img src="/resources/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image" />
+              <img src="<%=filename %>" class="img-circle" alt="User Image" />
             </div>
             <div class="pull-left info">
               <p><%=id %> 님</p>

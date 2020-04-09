@@ -360,7 +360,7 @@ input[type="email"]:focus {
     </header>
     <section>
       <article>
-        <form action="memberReg" method="post" class="memberReg">
+        <form action="memberReg" method="post" class="memberReg" enctype="multipart/form-data" >
           <h2>회원가입</h2>
           <hr />
 
@@ -386,6 +386,11 @@ input[type="email"]:focus {
           <div>이메일</div>
           <input type="email" name="email" id="email"  required="required"/>
           <br>
+          <div></div>
+		<label for="upload"></label> 
+		<input type="file" name="uploadFile" id="uploadFile" class="form-control"/>
+		
+          
          <div> 
          <input type="radio" name="usertype" value="1" checked="checked"/> 사용자
 		  <input type="radio" name="usertype" value="2"  /> 관리자

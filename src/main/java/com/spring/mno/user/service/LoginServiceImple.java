@@ -57,6 +57,12 @@ public class LoginServiceImple implements LoginService {
 				cookie2.setMaxAge(-1);
 				cookie2.setPath("/");
 				response.addCookie(cookie2);
+				Cookie cookie3 = new Cookie("filename", memberList.get(i).getFileName());
+				cookie3.setMaxAge(-1);
+				cookie3.setPath("/");
+				response.addCookie(cookie3);
+				
+				
 				break;
 			}
 		}

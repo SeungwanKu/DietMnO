@@ -61,10 +61,10 @@
          SELECT * FROM member
       </select>
       <insert id = "insertMember" parameterType = "member">
-         INSERT INTO member VALUES(#{id},#{passwd1},#{name}, #{email}, #{phone},#{addr},#{ssn},#{usertype})
+         INSERT INTO member VALUES(#{id},#{passwd1},#{name}, #{email}, #{phone}, #{addr}, #{ssn}, #{usertype}, #{fileName})
       </insert>
        <update id = "updateMember" parameterType = "member" >
-         UPDATE member SET name = #{name}, email = #{email}, phone = #{phone} ,addr = #{addr} WHERE id = #{id}
+         UPDATE member SET name = #{name}, email = #{email}, phone = #{phone} ,addr = #{addr}  WHERE id = #{id}
       </update>
       
       <!--

@@ -1,5 +1,7 @@
 package com.spring.mno.user.domain;
 
+import org.springframework.web.multipart.MultipartFile;
+
 public class MemberVO {
 	private String id;
 	private String passwd1;
@@ -9,6 +11,23 @@ public class MemberVO {
 	private String addr;
 	private String ssn;
 	private String usertype;
+	private String fileName;
+	private MultipartFile uploadFile;
+	public String getFileName() {
+		return fileName;
+	}
+
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
+	}
+
+	public MultipartFile getUploadFile() {
+		return uploadFile;
+	}
+
+	public void setUploadFile(MultipartFile uploadFile) {
+		this.uploadFile = uploadFile;
+	}
 
 	public String getId() {
 		return id;
