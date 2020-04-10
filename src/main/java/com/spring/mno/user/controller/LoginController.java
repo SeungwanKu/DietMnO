@@ -127,7 +127,7 @@ public class LoginController {
 	
 	@RequestMapping(value = "/update")
 	public String modifyMember(MemberVO vo) throws IllegalStateException, IOException {
-		
+		System.out.println(vo.getPasswd1());
 		loginService.modifyMember(vo);
 		return "redirect:/memberinfo?id="+vo.getId();
 	}

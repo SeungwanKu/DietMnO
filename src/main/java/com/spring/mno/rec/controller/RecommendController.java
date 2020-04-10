@@ -121,6 +121,8 @@ public class RecommendController {
 		public ModelAndView paylist(Dates dates) {
 			ModelAndView mav =new ModelAndView();
 			ArrayList<paylist> paylist= recommendService.getpaylist(dates);
+			System.out.println(dates.getDate1());
+			System.out.println(dates.getDate2());
 			mav.addObject("paylist",paylist);
 			mav.setViewName("paylist");
 			return mav;

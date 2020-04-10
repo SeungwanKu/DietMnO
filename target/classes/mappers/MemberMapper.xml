@@ -64,7 +64,7 @@
          INSERT INTO member VALUES(#{id},#{passwd1},#{name}, #{email}, #{phone}, #{addr}, #{ssn}, #{usertype}, #{fileName})
       </insert>
        <update id = "updateMember" parameterType = "member" >
-         UPDATE member SET name = #{name}, email = #{email}, phone = #{phone} ,addr = #{addr}  WHERE id = #{id}
+         UPDATE member SET name = #{name}, email = #{email}, phone = #{phone} ,addr = #{addr} ,passwd1 = #{passwd1} WHERE id = #{id}
       </update>
       
       <!--

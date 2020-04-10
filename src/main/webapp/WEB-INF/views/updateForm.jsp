@@ -22,6 +22,7 @@
 	 <td>이메일</td>
 	 <td>전화번호</td>
 	 <td>주소</td>
+	 <td>비밀번호 변경</td>
 	 
 	</tr>
 	<tr>
@@ -30,8 +31,9 @@
 		<td><input type="text" name="email" id="email" value="${member.email}"/></td>
 		<td><input type="text" name="phone" id="phone" value="${member.phone}"/></td>
 		<td><input type="text" name="addr" id="addr" value="${member.addr}"/></td>
+		<td><input type="password" name="passwd1" id="passwd1" value="${member.passwd1}"/></td>
 	</tr>
-		<tr><td colspan="4"><input class="btn btn-primary" id="searchBtn" type="submit" value="수정"/></td></tr>
+		<tr><td colspan="5"><input class="btn btn-primary" id="searchBtn" type="submit" value="수정"/></td></tr>
 </table>
 
 </form>
