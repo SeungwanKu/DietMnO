@@ -13,7 +13,7 @@
 </head>
 <div class="body">
 <div class="container">
-<form action="update" method="POST" enctype="multipart/form-data" >
+<form action="update" name="update" method="POST" enctype="multipart/form-data" >
 <h1>내 정보 수정</h1>
 <hr>
 <table class="table table-striped">
@@ -34,8 +34,15 @@
 		<td><input type="password" name="passwd1" id="passwd1" value="${member.passwd1}"/></td>
 		<td><input type="file" name="uploadFile" id="uploadFile" class="form-control"/></td>
 	</tr>
-		<tr><td colspan="6"><input class="btn btn-primary" id="searchBtn" type="submit" value="수정"/></td></tr>
+		<tr><td colspan="6"><input class="btn btn-primary" id="searchBtn" type="submit" value="수정" onclick="send()"/></td></tr>
 </table>
+ <script>
+	function send() {
+		alert("프로필 변경은 로그아웃 이후 적용됩니다.");
+		document.update.submit();
+	
+		}
+  </script>
 
 </form>
 </div>
