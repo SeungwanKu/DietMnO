@@ -363,7 +363,7 @@ input[type="button"]:hover {
     </header>
     <section>
       <article>
-        <form action="memberReg" method="post" class="memberReg" enctype="multipart/form-data" >
+        <form action="memberReg" name="memberReg" method="post" class="memberReg" enctype="multipart/form-data" >
           <h2>회원가입</h2>
           <hr />
 
@@ -399,11 +399,18 @@ input[type="button"]:hover {
          <input type="radio" name="usertype" value="1" checked="checked"/> 사용자
 		  <input type="radio" name="usertype" value="2"  /> 관리자
 		  </div><br>
-          <input type="submit" value="회원가입하기" id="submit" disabled="disabled"/>
+          <input type="submit" value="회원가입하기" id="submit" disabled="disabled" onclick="send()"/>
         	
         </form>
       </article>
     </section>
     <footer></footer>
   </body>
+  <script>
+	function send() {
+		alert('회원가입에 성공하셨습니다.');
+		document.memberReg.submit();
+	
+		}
+  </script>
 </html>
