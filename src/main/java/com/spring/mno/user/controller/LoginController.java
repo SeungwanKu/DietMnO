@@ -127,7 +127,16 @@ public class LoginController {
 	
 	@RequestMapping(value = "/update")
 	public String modifyMember(MemberVO vo) throws IllegalStateException, IOException {
-		System.out.println(vo.getPasswd1());
+		String fileName = null;
+		MultipartFile uploadFile = vo.getUploadFile();
+		if (!uploadFile.isEmpty()) {
+			String originalFileName = uploadFile.getOriginalFilename(); // 원래 이름
+			String ext = FilenameUtils.getExtension(originalFileName); // 확장자 구하기
+			UUID uuid = UUID.randomUUID(); // UUID 구하기
+			fileName = uuid + "." + ext;
+			uploadFile.transferTo(new File("D:\\upload\\" + fileName));
+		}
+		vo.setFileName(fileName);
 		loginService.modifyMember(vo);
 		return "redirect:/memberinfo?id="+vo.getId();
 	}

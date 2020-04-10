@@ -13,7 +13,7 @@
 </head>
 <div class="body">
 <div class="container">
-<form action="update" method="POST" >
+<form action="update" method="POST" enctype="multipart/form-data" >
 <h1>내 정보 수정</h1>
 <hr>
 <table class="table table-striped">
@@ -23,7 +23,7 @@
 	 <td>전화번호</td>
 	 <td>주소</td>
 	 <td>비밀번호 변경</td>
-	 
+	 <td>프로필 변경</td>	 
 	</tr>
 	<tr>
 		<td><input type="hidden" name="id" value="${member.id}"/>
@@ -32,8 +32,9 @@
 		<td><input type="text" name="phone" id="phone" value="${member.phone}"/></td>
 		<td><input type="text" name="addr" id="addr" value="${member.addr}"/></td>
 		<td><input type="password" name="passwd1" id="passwd1" value="${member.passwd1}"/></td>
+		<td><input type="file" name="uploadFile" id="uploadFile" class="form-control"/></td>
 	</tr>
-		<tr><td colspan="5"><input class="btn btn-primary" id="searchBtn" type="submit" value="수정"/></td></tr>
+		<tr><td colspan="6"><input class="btn btn-primary" id="searchBtn" type="submit" value="수정"/></td></tr>
 </table>
 
 </form>
